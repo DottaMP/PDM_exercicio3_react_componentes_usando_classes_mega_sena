@@ -10,6 +10,7 @@ Crie uma aplicação ReactJS que gera um jogo da Mega Sena para o usuário. Ela 
 ### Faça uso dos componentes da biblioteca React Bootstrap. 
 ### Visite o abaixo para encontrar a sua documentação oficial.
 ### https://react-bootstrap.github.io/
+### npm install react-bootstrap bootstrap
 #
 # Resultado do exercício
 ![Figura Final:](./src/images/como_ficou.jpg "Figura Resultado")

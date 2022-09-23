@@ -1,8 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import ReactDOM from 'react-dom'
 import React from 'react'
 import '@fortawesome/fontawesome-free/css/all.css'
 import logo from './images/logo.jpg'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import ListGroup from 'react-bootstrap/ListGroup'
+import Row from 'react-bootstrap/Row'
 
 export default class App extends React.Component {
     constructor(props){
@@ -23,34 +29,44 @@ export default class App extends React.Component {
 
     render(){
         return (
-            <div className='container mt-2'>
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card bg-dark">
-                            <div className="card-body">
-                                <div className="d-flex align-items-center mb-2"style={{height: '6rem'}}>
-                                    <img className='img-fluid rounded align-items-center mb-2"' style={{height: '6rem', margin: 'auto'}} 
+            <Container className="mt-2">
+                <Row className="justify-content-center">
+                    <Col md={8}>
+                        <Card className="bg-dark">
+                            <Card.Body>
+                                <div className="d-flex justify-content-center align-items-center mb-2"style={{height: '6rem'}}>
+                                    <img className='img-fluid rounded align-items-center mb-2"' style={{height: '4rem', margin: 'auto'}} 
                                         src={logo} alt="Logo Mega Sena" />
                                 </div>
-                                <div className='list-group'>
-                                    <div className="list-group-item mt-2 mb-2 text-center text-success d-flex justify-content-between align-items-center">
-                                        <ul style={{margin: 'auto', fontWeight: 'bold', fontSize:26}}>{this.state.jogo[0]}</ul>
-                                        <ul style={{margin: 'auto', fontWeight: 'bold', fontSize:26}}>{this.state.jogo[1]}</ul>
-                                        <ul style={{margin: 'auto', fontWeight: 'bold', fontSize:26}}>{this.state.jogo[2]}</ul>
-                                        <ul style={{margin: 'auto', fontWeight: 'bold', fontSize:26}}>{this.state.jogo[3]}</ul>
-                                        <ul style={{margin: 'auto', fontWeight: 'bold', fontSize:26}}>{this.state.jogo[4]}</ul>
-                                        <ul style={{margin: 'auto', fontWeight: 'bold', fontSize:26}}>{this.state.jogo[5]}</ul>
-                                    </div>
-                                </div>
-                                <button onClick={this.obterJogo} className="btn btn-outline-success w-100 mt-2"
-                                    style={{fontWeight: 'bold', fontSize:22}}>
+                                <ListGroup horizontal className="d-flex justify-content-center align-items-center mb-2">
+                                <ListGroup.Item className="d-flex mt-2 mb-2 text-success justify-content-center align-items-center w-50 mb-2">
+                                        {this.state.jogo[0]}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item className="d-flex mt-2 mb-2 text-success justify-content-center align-items-center w-50 mb-2">
+                                        {this.state.jogo[1]}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item className="d-flex mt-2 mb-2 text-success justify-content-center align-items-center w-50 mb-2">
+                                        {this.state.jogo[2]}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item className="d-flex mt-2 mb-2 text-success justify-content-center align-items-center w-50 mb-2">
+                                        {this.state.jogo[3]}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item className="d-flex mt-2 mb-2 text-success justify-content-center align-items-center w-50 mb-2">
+                                        {this.state.jogo[4]}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item className="d-flex mt-2 mb-2 text-success justify-content-center align-items-center w-50 mb-2">
+                                        {this.state.jogo[5]}
+                                    </ListGroup.Item>
+                                </ListGroup>
+                                <Button variant="outline-success" className="text-white d-flex justify-content-center align-items-center w-100"
+                                    style={{fontWeight: 'bold', fontSize:20}} onClick={this.obterJogo} >
                                     Fazer Jogo
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }
